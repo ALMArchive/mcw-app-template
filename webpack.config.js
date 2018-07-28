@@ -1,4 +1,6 @@
 const autoprefixer = require('autoprefixer');
+const path = require("path");
+const materialImporter = require(path.join(__dirname,"scripts/resolve_modules.js"));
 
 module.exports = {
   entry: ['./app.scss', './app.js'],
@@ -28,6 +30,8 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               includePaths: ['./node_modules'],
+              // uncomment this option for nested node modules
+              // importer: materialImporter
             },
           }],
       },
