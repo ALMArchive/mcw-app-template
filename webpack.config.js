@@ -1,6 +1,6 @@
 const autoprefixer = require('autoprefixer');
 const path = require("path");
-const materialImporter = require(path.join(__dirname,"scripts/resolve_modules.js"));
+const materialImporter = require(path.join(__dirname, "scripts/resolve_modules.js"));
 
 module.exports = {
   entry: ['./app.scss', './app.js'],
@@ -41,6 +41,12 @@ module.exports = {
         query: {
           presets: ['es2015'],
         },
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
       }],
   },
 };
