@@ -1,5 +1,6 @@
 {
   "name": "mcw-app-template",
+  "private": true,
   "version": "1.0.0",
   "description": "A base template for a Material Components Web app.",
   "main": "index.js",
@@ -17,8 +18,8 @@
     "Template",
     "App"
   ],
-  "author": "Alessandro Maclaine",
-  "license": "MIT",
+  "author": "AUTHOR",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/ALMaclaine/mcw-app-template/issues"
   },
