@@ -3,7 +3,7 @@ const path = require("path");
 const materialImporter = require(path.join(__dirname, "scripts/resolve_modules.js"));
 
 module.exports = {
-  entry: ['./app.scss', './app.js'],
+  entry: ['./app.scss', './app.ts'],
   output: {
     filename: 'bundle.js',
   },
@@ -30,16 +30,22 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               includePaths: ['./node_modules'],
+              implementation: require('dart-sass'),
               // uncomment this option for nested node modules
               // importer: materialImporter
             },
           }],
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015'],
+          presets: ['env'],
         },
       },
       {
@@ -49,4 +55,7 @@ module.exports = {
         ]
       }],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  }
 };
