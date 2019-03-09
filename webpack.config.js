@@ -36,6 +36,7 @@ module.exports = {
             },
           }],
       },
+      
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -49,7 +50,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|woff2)$/,
         use: [
           'file-loader'
         ]
