@@ -43,10 +43,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.js$/,
+        test: /\.(js|tsx)$/,
         loader: 'babel-loader',
         query: {
-          presets: ['env'],
+          presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
       {
