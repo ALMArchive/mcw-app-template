@@ -1,2 +1,1 @@
-const string: string = "Hello World";
-console.log(string);
+const str = 'Hello World';

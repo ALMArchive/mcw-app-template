@@ -1,6 +1,6 @@
 const autoprefixer = require('autoprefixer');
-const path = require("path");
-const materialImporter = require(path.join(__dirname, "scripts/resolve_modules.js"));
+// const path = require('path');
+// const materialImporter = require(path.join(__dirname, 'scripts/resolve_modules.js'));
 
 module.exports = {
   entry: ['./app.scss', './app.ts'],
@@ -18,8 +18,8 @@ module.exports = {
               name: 'bundle.css',
             },
           },
-          { loader: 'extract-loader' },
-          { loader: 'css-loader' },
+          {loader: 'extract-loader'},
+          {loader: 'css-loader'},
           {
             loader: 'postcss-loader',
             options: {
@@ -36,27 +36,24 @@ module.exports = {
             },
           }],
       },
-      
+
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
-        test: /\.(js|tsx)$/,
+        test: /\.(js|tsx?)$/,
         loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
       },
       {
         test: /\.(png|svg|jpg|gif|woff2)$/,
         use: [
-          'file-loader'
-        ]
+          'file-loader',
+        ],
       }],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
-  }
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 };
