@@ -3,7 +3,7 @@ const autoprefixer = require('autoprefixer');
 // const materialImporter = require(path.join(__dirname, 'scripts/resolve_modules.js'));
 
 module.exports = {
-  entry: ['./app.scss', './app.ts'],
+  entry: ['./app.scss', './app.tsx'],
   output: {
     filename: 'bundle.js',
   },
